@@ -1,0 +1,12 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.layui-card {
+    padding: 10px;
+}
+
+.layui-form {
+    width: 500px;
+}

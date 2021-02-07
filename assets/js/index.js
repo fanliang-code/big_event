@@ -27,17 +27,17 @@ function getUserINfo() {
             renderAvatar(res.data);
         },
         //请求成功或失败都会调用这个函数
-        complete: function(res) {
-            // console.log(res);
-            // responseJSON: {status: 1, message: "身份认证失败！"}
-            if (res.responseJSON.status == 1 && res.responseJSON.message == "身份认证失败！") {
-                // 强制清空token
-                localStorage.removeItem('token');
-                // 强制跳转到登录页面
-                location.href = '/JINSSHI/阶段4/bigEventFll/login.html'
+        // complete: function(res) {
+        //     // console.log(res);
+        //     // responseJSON: {status: 1, message: "身份认证失败！"}
+        //     if (res.responseJSON.status == 1 && res.responseJSON.message == "身份认证失败！") {
+        //         // 强制清空token
+        //         localStorage.removeItem('token');
+        //         // 强制跳转到登录页面
+        //         location.href = '/JINSSHI/阶段4/bigEventFll/login.html'
 
-            }
-        }
+        //     }
+        // }
     })
 }
 //渲染用户的头像
@@ -52,8 +52,9 @@ function renderAvatar(user) {
         $('.text-avator').hide();
     } else {
         $('.layui-nav-img').hide();
+        //name[0] 拿到用户名的第 一个字符
         var first = name[0].toUpperCase();
         $('.text-avator').html(first).show();
     }
-    //拿到用户名的第 一个字符
+
 }
